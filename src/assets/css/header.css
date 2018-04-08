@@ -1,0 +1,39 @@
+#header {
+    background-color: #eee;
+    border-bottom: solid 1px #ddd;
+}
+
+.headerMenu {
+    width: 1000px;
+    margin: 0px auto;
+    height: 60px;
+    line-height: 60px;
+}
+
+.menuLeft {
+    display: inline-block;
+    font-size: 28px;
+    font-weight: 100;
+}
+
+.menuRight {
+    display: inline-flex;
+    float: right;
+    align-items: center;
+    flex-direction: row;
+    height: 60px;
+    line-height: 60px;
+}
+
+.listLink {
+    margin: 0 15px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 16px;
+
+
+}
+
+.iconUser {
+    font-size: 24px !important;
+}
