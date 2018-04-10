@@ -5,18 +5,13 @@ body {
     color: #484848;
 }
 
-a {
+.aiguqin a {
     text-decoration: none;
-    color: inherit;
+    color: #484848;
 }
 
-h1 {
+h1, h3, p {
     margin: 0;
-}
-
-.title {
-    color: #008489;
-    text-align: center;
 }
 
 .content {
@@ -24,16 +19,64 @@ h1 {
     width: 100%;
     margin: 0 auto;
     padding-top: 40px;
-    .cert {
+    .certs-title {
+        margin-bottom: 20px;
+    }
+
+    .more-link {
+        float: right;
+        font-size: 12px;
+        font-weight: 100;
+        line-height: 24px;
+        color: #A61D55;
+    }
+
+    .certs-societies {
         margin-top: 80px;
+        position: relative;
+        display: table;
+        .iconStar, .anticon-star {
+            color: #008489;
+        }
+
+        .cert {
+            margin-bottom: 30px;
+
+            .image-block {
+                width: 220px;
+                height: 220px;
+                background-image: url("../images/bigbg.jpg");
+                background-color: #000;
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                
+            }
+
+            .text-block {
+                padding-top: 10px;
+                padding-right: 15px;
+                .title {
+                    margin-bottom: 5px;
+                }
+                .number {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+
+    .certs-hot {
+        margin-top: 80px;
+        position: relative;
+        .ant-list-item-meta-avatar {
+            display: block;
+        }
+
+        .share-label {
+            color: rgb(166, 29, 85);
+            font-size: 12px;
+        }
     }
 }
 
-.image-block {
-    background-image: url("../images/bigbg.jpg");
-    background-color: #000;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 480px;
-}
