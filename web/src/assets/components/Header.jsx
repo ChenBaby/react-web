@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import classnames from 'classnames';
 import HeaderCss from '../css/header.less';
 import { Icon, Avatar } from 'antd';
@@ -11,43 +12,39 @@ class Header extends React.Component {
     }
 
     componentDidMount() {
+        this.handleScroll();
         window.addEventListener('scroll', this.handleScroll);
     }
-    
-    componentWillUnmount () {
+
+    componentWillUnmount() {
+        this.handleScroll();
         window.removeEventListener('scroll', this.handleScroll);
     }
 
-    handleScroll (e) {
+    handleScroll () {
         let scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
-        if (scrollTop > 499) {
-            this.setState({transparent: true});
+        if(location.pathname === '/') {
+            if (scrollTop > 499) {
+                this.setState({clearHeader: false});
+            } else {
+                this.setState({clearHeader: true});
+            }
         } else {
-            this.setState({transparent: false});
+            this.setState({clearHeader: false});
         }
     }
 
     render () {
         return (
-            <div id="header" className="header-box" onScroll={this.handleScroll}>
-                <div className="banner">
-                    <div className="banner-background">
-                    </div>
-                    {/* <div className="search-box" >
-                        <form>
-                            <input type="text" placeholder="搜索课程..." id="header-search"/>
-                            <a><Icon type="search" /></a>
-                        </form>
-                    </div> */}
-                </div>
-                <div className={classnames(HeaderCss.menuWrapper, this.state.transparent ? HeaderCss.transparent : '')}>
+            <div id="header" className="header-box">
+                <div className={classnames(HeaderCss.menuWrapper, this.state.clearHeader ? HeaderCss.clearHeader : '')}>
                     <div className="headerMenu">
                         <h1 className={HeaderCss.menuLeft}><a>爱古琴</a></h1>                    
                         <div className={HeaderCss.menuRight}>
-                            <a href="" className={HeaderCss.listLink}>主页</a>
-                            <a href="" className={HeaderCss.listLink}>公益</a>
-                            <a href="" className={HeaderCss.listLink}>关于</a>
-                            <a href="javescript:void(0)" className={HeaderCss.listLink}><Avatar shape="circle" size="small" icon="user" src={this.props.url} className="icon-user"/></a>
+                            <Link className={HeaderCss.listLink} to="/">主页</Link>
+                            <Link className={HeaderCss.listLink} to="/charity">公益</Link>
+                            <Link className={HeaderCss.listLink} to="/about">关于</Link>
+                            <Link className={HeaderCss.listLink} to="/login"><Avatar shape="circle" size="small" icon="user" src={this.props.url} className="icon-user"/></Link>
                         </div>
                     </div>
                 </div>

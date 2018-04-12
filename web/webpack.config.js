@@ -62,6 +62,9 @@ module.exports = {
     devServer: {
         port: 3000,
         stats: "errors-only", //命令行只打印错误的显示
-        inline: true //自动刷新页面
+        inline: true, //自动刷新页面
+        historyApiFallback: { //解决BrowserRouter刷新问题
+            index: './'
+        }
     }
 };
