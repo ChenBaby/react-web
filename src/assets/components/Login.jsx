@@ -1,13 +1,13 @@
-import React from 'react';
+import React from 'react'
 
 class Login extends React.Component {
-    render () {
-        return (
-            <div>
-                <h2>登录爱古琴</h2>
-            </div>
-        )
-    }
- }
+  render() {
+    return (
+      <div>
+        <h2>登录爱古琴</h2>
+      </div>
+    )
+  }
+}
 
-export default Login;
+export default Login
