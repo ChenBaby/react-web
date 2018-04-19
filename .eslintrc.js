@@ -14,12 +14,18 @@ module.exports = {
   },
   "rules": {
     // "indent": ["error", 4],
-    "linebreak-style": ["error", "windows"],
+    "linebreak-style": 0,
     "jsx-quotes": ["error", "prefer-single"],
     "semi": ["error", "never"],
     "react/jsx-filename-extension": [1, {
       "extensions": [".js", ".jsx"]
     }],
-    "jsx-a11y/anchor-is-valid": 0
+    "jsx-a11y/anchor-is-valid": 0,
+    "react/no-array-index-key": 0,
+    "space-before-function-paren": 0,
+    "jsx-a11y/label-has-for": 0,
+    "comma-dangle": 0,
+    "keyword-spacing": 2,
+    "space-before-function-paren": [2, "always"]
   }
 };

@@ -16,6 +16,12 @@ module.exports = {
   module: {
     rules: [
       {
+        enforce: "pre",
+        test: /\.js|jsx$/,
+        exclude: /node_modules/,
+        loader: "eslint-loader"
+      },
+      {
         test: /\.js|jsx$/,
         // 只有jsx或者js文件会被编译
 
