@@ -14,9 +14,16 @@ module.exports = {
     extensions: ['.js', '.jsx', 'css', 'less'],
   },
   module: {
-    rules: [{
-      test: /\.js|jsx$/,
-      // 只有jsx或者js文件会被编译
+    rules: [
+      {
+        enforce: "pre",
+        test: /\.js|jsx$/,
+        exclude: /node_modules/,
+        loader: "eslint-loader"
+      },
+      {
+        test: /\.js|jsx$/,
+        // 只有jsx或者js文件会被编译
 
       loader: 'babel-loader',
 
