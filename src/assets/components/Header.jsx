@@ -41,11 +41,12 @@ class Header extends React.Component {
         <div className={classnames(HeaderCss.menuWrapper, this.state.clearHeader ? HeaderCss.clearHeader : '')}>
           <div className='headerMenu'>
             <h1 className={HeaderCss.menuLeft}>
-              <Link className={HeaderCss.listLink} to='/'>爱古琴</Link>
+              <Link to='/'>爱古琴</Link>
             </h1>
             <div className={HeaderCss.menuRight}>
               <Link className={HeaderCss.listLink} to='/'>主页</Link>
-              <Link className={HeaderCss.listLink} to='/charity'>公益</Link>
+              <Link className={HeaderCss.listLink} to='/library'>资料库</Link>
+              {/* <Link className={HeaderCss.listLink} to='/charity'>公益</Link> */}
               <Link className={HeaderCss.listLink} to='/about'>关于</Link>
               <Link className={HeaderCss.listLink} to='/login'><Avatar shape='circle' size='small' icon='user' src={this.props.url} className='icon-user' /></Link>
             </div>
