@@ -2,7 +2,7 @@ import React from 'react'
 import { Icon } from 'antd'
 import '../css/about.less'
 
-function About() {
+function About () {
   return (
     <div className='about-content'>
       <div className='section-tit'>

@@ -5,12 +5,12 @@ import '../css/library.less'
 const { TabPane } = Tabs.TabPane
 
 class Library extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {}
   }
 
-  render() {
+  render () {
     return (
       <div className='library-content'>
         <Tabs defaultActiveKey='1'>

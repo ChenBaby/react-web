@@ -17,12 +17,12 @@ import IndexCss from './assets/css/index.less'
 
 
 class App extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {}
   }
 
-  render() {
+  render () {
     return (
       <div className={classnames(IndexCss.aiguqin)}>
         <Header />

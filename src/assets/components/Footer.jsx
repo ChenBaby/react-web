@@ -2,7 +2,7 @@ import React from 'react'
 import { Icon } from 'antd'
 import '../css/footer.less'
 
-function Footer() {
+function Footer () {
   return (
     <div id='footer' className='footer'>
       <div className='footerMenu'>

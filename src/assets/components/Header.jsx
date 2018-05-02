@@ -6,23 +6,23 @@ import PropTypes from 'prop-types'
 import HeaderCss from '../css/header.less'
 
 class Header extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {}
     this.handleScroll = this.handleScroll.bind(this)
   }
 
-  componentDidMount() {
+  componentDidMount () {
     this.handleScroll()
     window.addEventListener('scroll', this.handleScroll)
   }
 
-  componentWillUnmount() {
+  componentWillUnmount () {
     this.handleScroll()
     window.removeEventListener('scroll', this.handleScroll)
   }
 
-  handleScroll() {
+  handleScroll () {
     const scrollTop = document.body.scrollTop || document.documentElement.scrollTop
     if (document.location.pathname === '/') {
       if (scrollTop > 499) {
@@ -35,7 +35,7 @@ class Header extends React.Component {
     }
   }
 
-  render() {
+  render () {
     return (
       <div id='header' className='header-box'>
         <div className={classnames(HeaderCss.menuWrapper, this.state.clearHeader ? HeaderCss.clearHeader : '')}>

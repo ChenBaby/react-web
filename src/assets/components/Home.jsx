@@ -3,15 +3,15 @@ import { Icon, Row, Col, List, Avatar } from 'antd'
 import '../css/index.less'
 
 class Home extends React.Component {
-  componentDidMount() {
+  componentDidMount () {
 
   }
 
-  componentWillUnmount() {
+  componentWillUnmount () {
 
   }
 
-  render() {
+  render () {
     // 全球琴社页面的测试数据
     const societiesList = [
       {
