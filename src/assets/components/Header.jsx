@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+
 import classnames from 'classnames'
 import { Avatar } from 'antd'
 import PropTypes from 'prop-types'
@@ -11,6 +12,7 @@ class Header extends React.Component {
     this.state = {}
     this.handleScroll = this.handleScroll.bind(this)
   }
+
 
   componentDidMount () {
     this.handleScroll()
@@ -44,11 +46,11 @@ class Header extends React.Component {
               <Link to='/'>爱古琴</Link>
             </h1>
             <div className={HeaderCss.menuRight}>
-              <Link className={HeaderCss.listLink} to='/'>主页</Link>
-              <Link className={HeaderCss.listLink} to='/library'>资料库</Link>
+              <Link className={HeaderCss.listLink} to='/' onClick={this.handleScroll}>主页</Link>
+              {/* <Link className={HeaderCss.listLink} to='/library'>资料库</Link> */}
               {/* <Link className={HeaderCss.listLink} to='/charity'>公益</Link> */}
-              <Link className={HeaderCss.listLink} to='/about'>关于</Link>
-              <Link className={HeaderCss.listLink} to='/login'><Avatar shape='circle' size='small' icon='user' src={this.props.url} className='icon-user' /></Link>
+              <Link className={HeaderCss.listLink} to='/about' onClick={this.handleScroll}>关于</Link>
+              {/* <Link className={HeaderCss.listLink} to='/login'><Avatar shape='circle' size='small' icon='user' src={this.props.url} className='icon-user' /></Link> */}
             </div>
           </div>
         </div>
@@ -58,11 +60,11 @@ class Header extends React.Component {
 }
 
 Header.defaultProps = {
-  url: '',
+  url: ''
 }
 
 Header.propTypes = {
-  url: PropTypes.string,
+  url: PropTypes.string
 }
 
 export default Header

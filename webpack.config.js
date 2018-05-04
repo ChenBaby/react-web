@@ -15,12 +15,12 @@ module.exports = {
   },
   module: {
     rules: [
-      {
-        enforce: "pre",
-        test: /\.js|jsx$/,
-        exclude: /node_modules/,
-        loader: "eslint-loader"
-      },
+      // {
+      //   enforce: "pre",
+      //   test: /\.js|jsx$/,
+      //   exclude: /node_modules/,
+      //   loader: "eslint-loader"
+      // },
       {
         test: /\.js|jsx$/,
         // 只有jsx或者js文件会被编译
@@ -71,5 +71,5 @@ module.exports = {
     historyApiFallback: { // 解决BrowserRouter刷新问题
       index: './',
     },
-  },
+  }
 }

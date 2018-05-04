@@ -27,6 +27,9 @@ p {
     width: 100%;
     margin: 0 auto;
     padding-top: 40px;
+    > div {
+      margin-top: 80px;
+    }
   }
   .certs-title {
     margin-bottom: 20px;
@@ -45,7 +48,6 @@ p {
     color: #A61D55;
   }
   .certs-societies {
-    margin-top: 80px;
     position: relative;
     display: table;
     .iconStar,
@@ -117,7 +119,6 @@ p {
     }
   }
   .certs-hot {
-    margin-top: 80px;
     position: relative;
     .ant-list-item-meta-avatar {
       display: block;
@@ -125,6 +126,105 @@ p {
     .share-label {
       color: rgb(166, 29, 85);
       font-size: 12px;
+    }
+  }
+  .certs-books {
+    .bookcover {
+      width: 130px;
+      height: 200px;
+      margin: 0 0 5em;
+      background: #008489;
+      position: relative;
+      cursor: pointer;
+      h2 {
+        position: absolute;
+        font-size: 20px;
+        margin: 0;
+        top: 15px;
+        left: 14px;
+        padding: 10px 5px;
+        text-align: center;
+        background-color: #fff;
+        min-height: 140px;
+        color: #694336;
+        width: 40px;
+        line-height: 1.1em;
+        border: solid 2px #333;
+      }
+      .verticle {
+        writing-mode: vertical-lr;
+        -webkit-writing-mode: vertical-rl;
+      }
+    }
+  }
+  .certs-notations {
+    .ant-row {
+      border-left: 1px solid #DBDBDB;
+      border-top: 1px solid #DBDBDB;
+      border-radius: 4px;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+    .cert {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+    .notation {
+      padding: 20px 0;
+      font-size: 0;
+      line-height: 1.4;
+      text-align: center;
+      background-color: transparent;
+      cursor: pointer;
+      position: relative;
+      border-right: 1px solid #DBDBDB;
+      border-bottom: 1px solid #DBDBDB;
+    }
+    .glyph {
+      width: 80px;
+      height: 60px;
+      padding: 14px 24px;
+      margin: auto;
+      display: block;
+      color: #98782D;
+      font-weight: 100;
+      svg {
+        fill: #008489;
+      }
+    }
+    .name {
+      color: #999;
+      font-size: 14px;
+      display: block;
+      line-height: 32px;
+    }
+  }
+  .certs-songs {
+    margin-top: 150px !important;
+    .ant-row {
+      border-left: 1px solid #DBDBDB;
+      border-top: 1px solid #DBDBDB;
+      border-radius: 4px;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+    .cert {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      border-right: 1px solid #DBDBDB;
+      border-bottom: 1px solid #DBDBDB;
+    }
+    .song {
+      text-align: center;
+      height: 100px;
+      padding: 20px 0;
+      .anticon {
+        font-size: 30px;
+      }
+      a {
+        display: block;
+        margin-bottom: 10px;
+      }
     }
   }
 }

@@ -5,7 +5,7 @@ import { BackTop } from 'antd'
 import classnames from 'classnames'
 
 import Home from './assets/components/Home'
-import Header from './assets/components/Header'
+// import Header from './assets/components/Header'
 import Footer from './assets/components/Footer'
 import Charity from './assets/components/Charity'
 import About from './assets/components/About'
@@ -25,7 +25,7 @@ class App extends React.Component {
   render () {
     return (
       <div className={classnames(IndexCss.aiguqin)}>
-        <Header />
+        {/* <Header /> */}
         <div className='content'>
           <Switch>
             <Route exact path='/' component={Home} />
