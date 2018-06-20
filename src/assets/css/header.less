@@ -18,6 +18,7 @@
     box-shadow: 0 1px 0 #DBDBDB;
     color: #484848;
     background-color: #fff;
+    padding-top: 20px;
     &.clearHeader {
       box-shadow: none;
       background: none;
@@ -25,25 +26,28 @@
         color: #fff;
       }
     }
+    &.clearBackground {
+      background-color: rgba(255,255,255,0.35);
+    }
     .headerMenu {
       width: 100%;
       max-width: 1000px;
       margin: 0px auto;
-      height: 60px;
-      line-height: 60px;
+      height: 44px;
+      line-height: 44px;
+      display: flex;
+      justify-content: space-between;
       .menuLeft {
-        display: inline-block;
-        font-size: 28px;
-        font-weight: 100;
         color: #fff;
+        font-size: calc(120% + 1vw);
+        line-height: 44px;
+        font-weight: 700;
       }
       .menuRight {
-        display: inline-flex;
-        float: right;
         align-items: center;
         flex-direction: row;
-        height: 60px;
-        line-height: 60px;
+        height: 44px;
+        line-height: 44px;
       }
       .listLink {
         margin: 0 15px;

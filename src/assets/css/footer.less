@@ -1,22 +1,39 @@
 .footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
   margin-top: 200px;
   background-color: #fff;
   border-top: solid 1px #ddd;
   .footerMenu {
-    width: 1000px;
+    width: 100%;
+    max-width: 1000px;
     margin: 0 auto;
     height: 60px;
     line-height: 60px;
+    position: relative;
   }
-  .iconEmail {
-    font-size: 20px;
+  .anticon-mail {
+    margin: 0 5px;
   }
   .menu-right {
-    float: right;
+    position: absolute;
+    top: 0;
+    right: 0;
     padding-left: 5px;
+  }
+  @media only screen and (max-width: 575px) {
+    .beian-menu {
+      position: relative;
+      left: 10px;
+    }
+    span {
+      display: block;
+    }
+    .menu-left {
+      margin-left: 10px;
+    }
+    .menu-right {
+      position: absolute;
+      left: 0;
+      top: 30px;
+    }
   }
 }

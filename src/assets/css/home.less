@@ -1,0 +1,86 @@
+
+.dnasty {
+  display: block;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.65);
+  margin-bottom: 5px;
+}
+.ant-timeline-item {
+  margin-left: 30px;
+}
+.ant-timeline {
+  line-height: 4.5;
+  padding-top: 20px;
+  font-family: 'Poppins, sans-serif;'
+}
+.ant-timeline-item-content {
+  padding-left: 80px;
+  top: -45px;
+  width: 50%;
+  justify-content: space-between;
+  display: flex;
+}
+.title {
+  a {
+    font-size: 18px;
+    color: #02828b;
+  }
+}
+.author {
+  position: relative;
+  top: 15px;
+  font-size: 12px;
+}
+@media screen and (max-width: 820px) {
+  #home-page {
+    .banner {
+      height: 1100px;
+    }
+    .container.flex {
+      flex-flow: wrap;
+    }
+    .col-6 {
+      flex-basis: 100%;
+      max-width: 100%;
+      margin-bottom: 20px;
+      h1 {
+        font-size: calc(105% + 5.3vw);
+      }
+    }
+    .menuLeft {
+      padding-left: 15px;
+    }
+    .mobile-text-center {
+      text-align: center;
+    }
+    .iphone {
+      position: relative;
+      bottom: initial;
+      right: initial;
+      transform: none;
+      border-radius: 34px;
+      margin: 50px auto 0;
+      box-shadow: inset 0 0 1px 1px #dbdcdd, inset 0 0 1px 4px #efefef, inset 0 0 0 5px #fff, inset 0 0 0 6.5px #edf1f2, inset 5px 0 7px 5px #fff, inset -5px 0 7px 5px #fff;
+      padding: 55px 14px 60px;
+      &:before {
+        box-shadow: inset 0 4px 3px 0 #e6e6e6, inset 0 0 0 2px #ececec;
+      }
+      &:after {
+        width: 40px;
+        height: 40px;
+        bottom: 14px;
+        left: calc(50% - 20px);
+      }
+    }
+    .title {
+      font-size: 16px;
+    }
+    .author {
+      top: 10px;
+    }
+    .ant-timeline-item-content {
+      width: 100%;
+      padding-left: 70px;
+    }
+  }
+}

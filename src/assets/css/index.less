@@ -3,14 +3,37 @@ body {
   height: 100%;
   overflow-x: hidden;
   margin: 0;
-  font-family: Circular, "PingFang-SC", "Hiragino Sans GB", "微软雅黑", "Microsoft YaHei", "Heiti SC" !important;
+  font-family: Circular, "PingFang-SC", "Hiragino Sans GB", "微软雅黑", "Microsoft YaHei", "Heiti SC";
   font-size: 14px;
   color: #484848;
+  font-family: Poppins,sans-serif !important;
 }
 
 .aiguqin a {
   text-decoration: none;
   color: #484848;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.center-vertical {
+  justify-content: center;
+}
+
+.col-6 {
+    flex-basis: 50%;
+    max-width: 50%;
+    padding: 0 20px;
+}
+
+.main-blue {
+  color: #008489;
 }
 
 h1,
@@ -19,9 +42,46 @@ p {
   margin: 0;
 }
 
+li {
+  list-style: none;
+}
+
+.bookcover {
+  width: 130px;
+  height: 200px;
+  margin: 0 0 5em;
+  background: #008489;
+  position: relative;
+  cursor: pointer;
+  h2 {
+    position: absolute;
+    font-size: 20px;
+    margin: 0;
+    top: 15px;
+    left: 14px;
+    padding: 10px 5px;
+    text-align: center;
+    background-color: #fff;
+    min-height: 140px;
+    color: #694336;
+    width: 40px;
+    line-height: 1.1em;
+    border: solid 2px #333;
+  }
+  .verticle {
+    writing-mode: vertical-lr;
+    -webkit-writing-mode: vertical-rl;
+  }
+}
+
 .content {
   min-height: 100vh;
   padding: 60px 0px 200px 0px;
+  > div {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+  }
   .home-content {
     max-width: 1000px;
     width: 100%;
@@ -60,7 +120,7 @@ p {
       .image-block {
         width: 220px;
         height: 220px;
-        background-image: url("../images/bigbg.jpg");
+        //background-image: url("../images/bigbg.jpg");
         background-color: #000;
         background-position: center;
         background-size: cover;
@@ -129,33 +189,7 @@ p {
     }
   }
   .certs-books {
-    .bookcover {
-      width: 130px;
-      height: 200px;
-      margin: 0 0 5em;
-      background: #008489;
-      position: relative;
-      cursor: pointer;
-      h2 {
-        position: absolute;
-        font-size: 20px;
-        margin: 0;
-        top: 15px;
-        left: 14px;
-        padding: 10px 5px;
-        text-align: center;
-        background-color: #fff;
-        min-height: 140px;
-        color: #694336;
-        width: 40px;
-        line-height: 1.1em;
-        border: solid 2px #333;
-      }
-      .verticle {
-        writing-mode: vertical-lr;
-        -webkit-writing-mode: vertical-rl;
-      }
-    }
+
   }
   .certs-notations {
     .ant-row {
@@ -229,18 +263,22 @@ p {
   }
 }
 
+#home-page {
+  width: 100%;
+  max-width: 100%;
+}
+
 .top-button {
   bottom: 70px;
   right: 20px;
   .ant-back-top-content {
-    background-color: #008489;
+    background-color: #a61d55;
   }
 }
 
 .banner {
   position: relative;
   height: 520px;
-  text-align: center;
   .banner-background {
     position: absolute;
     top: -60px;
@@ -248,11 +286,105 @@ p {
     height: 100%;
     width: 100%;
     opacity: 1;
-    background-image: url('../images/background.jpg');
+    background-color: #35bac1;
     background-position: center bottom;
     background-repeat: no-repeat;
     background-size: cover;
+    padding: 200px 0;
+    overflow: hidden;
+    .container {
+      max-width: 1040px;
+      width: 100%;
+      margin: 0 auto;
+      > div {
+        position: relative;
+      }
+      h1, h2 {
+        color: #fff;
+        &.addOpacity {
+          opacity: 0.5;
+        }
+      }
+      h1 {
+        font-weight: 300;
+        font-size: 56px;
+        line-height: 1.38;
+      }
+      h2 {
+        font-size: 22px;
+        line-height: 1.8;
+        font-weight: 400;
+        margin-top: 20px;
+        margin-bottom: 0;
+      }
+      .mt40 {
+        margin-top: 40px;
+      }
+      .button {
+        background-color: #353740;
+        display: inline-block;
+        padding: 15px 20px;
+        border-radius: 3px;
+        margin-top: 10px;
+        font-size: 15px;
+        box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+        text-decoration: none;
+        color: #fff;
+        white-space: nowrap;
+        border: none;
+        -webkit-appearance: none;
+        cursor: pointer;
+      }
+      .iphone {
+        position: absolute;
+        display: inline-block;
+        background: linear-gradient(#f4f4f4,#f2f2f2);
+        padding: 62px 30px 78px 12px;
+        border-radius: 40px 52px 33px 55px;
+        transform: rotateX(-45deg) rotateZ(45deg) translateX(0);
+        box-shadow: 8px 8px 21px 0 rgba(0,0,0,.26), inset -5px -5px 6px 0 rgba(0,0,0,.12156862745098039), inset -15px -15px 13px 0 #c5cbd0, inset -11px -11px 6px 3px rgba(255,255,255,.75);
+        right: 130px;
+        bottom: -240px;
+        &:before {
+          content: "";
+          width: 58px;
+          height: 7px;
+          border-radius: 10px;
+          position: absolute;
+          box-shadow: inset 0 4px 3px 0 #d5d5d5, inset 0 0 0 2px #e8e8e8;
+          top: 31px;
+          left: calc(50% - 29px);
+        }
+        &:after {
+          content: "";
+          width: 44px;
+          height: 44px;
+          border-radius: 50%;
+          position: absolute;
+          box-shadow: inset 0 -2px 0.2px 0 #d5d5d5, inset 0 0 0 2.5px #e8e8e8;
+          bottom: 27px;
+          left: calc(50% - 22px);
+        }
+        .mask {
+          width: 250px;
+          min-height: 420px;
+          max-height: 520px;
+          height: 100%;
+          overflow: hidden;
+          border-radius: 0 0 4px 4px;
+          background: #fff;
+          position: relative;
+          .mask-img {
+            width: 100%;
+            display: block;
+            z-index: 2;
+            position: relative;
+          }
+        }
+      }
+    }
   }
+
   form {
     position: relative;
     display: inline-block;

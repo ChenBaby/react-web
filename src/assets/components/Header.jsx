@@ -27,6 +27,11 @@ class Header extends React.Component {
   handleScroll () {
     const scrollTop = document.body.scrollTop || document.documentElement.scrollTop
     if (document.location.pathname === '/') {
+      if (scrollTop > 100 && scrollTop < 499) {
+        this.setState({ clearBackground: true })
+      } else {
+        this.setState({ clearBackground: false })
+      }
       if (scrollTop > 499) {
         this.setState({ clearHeader: false })
       } else {
@@ -40,10 +45,10 @@ class Header extends React.Component {
   render () {
     return (
       <div id='header' className='header-box'>
-        <div className={classnames(HeaderCss.menuWrapper, this.state.clearHeader ? HeaderCss.clearHeader : '')}>
+        <div className={classnames(HeaderCss.menuWrapper, this.state.clearHeader ? HeaderCss.clearHeader : '', this.state.clearBackground ? HeaderCss.clearBackground : '')}>
           <div className='headerMenu'>
             <h1 className={HeaderCss.menuLeft}>
-              <Link to='/'>爱古琴</Link>
+              <Link to='/'>iGuChin</Link>
             </h1>
             <div className={HeaderCss.menuRight}>
               <Link className={HeaderCss.listLink} to='/' onClick={this.handleScroll}>主页</Link>

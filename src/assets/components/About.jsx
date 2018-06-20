@@ -33,7 +33,7 @@ class About extends React.Component {
           <h2>联系我们</h2>
           <h3>CONTACT US</h3>
         </div>
-        <p className='about-cot'><Icon type='environment' />地址：深圳市福田中心区八卦岭八卦北路428栋西座5楼</p>
+        <p className='about-cot'><Icon type='environment' />地址：深圳市罗湖区笋岗街道笋岗东路3002号万通大厦204室</p>
         <p className='about-cot'><Icon type='phone' />电话：(+86)13537807868</p>
         <p className='about-cot'> <Icon type='mail' />邮箱：aiguqin@aiguqin.com</p>
         <p>&nbsp;</p>

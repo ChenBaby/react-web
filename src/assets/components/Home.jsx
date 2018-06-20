@@ -1,15 +1,46 @@
 import React from 'react'
-import { Icon, Row, Col, List, Avatar } from 'antd'
+import PropTypes from 'prop-types'
+import { Icon, Row, Col, List, Avatar, Timeline } from 'antd'
 import Header from './Header'
-import '../css/index.less'
+import IndexCss from '../css/index.less'
+import HomeCss from '../css/home.less'
 
 class Home extends React.Component {
-  componentDidMount () {
+  constructor (props) {
+    super(props)
+    this.state = {}
+    this.handleScroll = this.handleScroll.bind(this)
+  }
 
+  componentDidMount () {
+    this.handleScroll()
+    window.addEventListener('scroll', this.handleScroll)
   }
 
   componentWillUnmount () {
+    this.handleScroll()
+    window.removeEventListener('scroll', this.handleScroll)
+  }
 
+  handleScroll () {
+    const scrollTop = document.body.scrollTop || document.documentElement.scrollTop
+    if (scrollTop > 100 && scrollTop < 499) {
+      this.setState({ addOpacity: true })
+    } else {
+      this.setState({ addOpacity: false })
+    }
+  }
+
+  gotoBook (bookid) {
+    console.log('跳转琴谱页面成功')
+    this.props.router.push(`/books/${bookid}`)
+    location.href = `/books/${bookid}`
+  }
+
+  gotoNotation (notationid) {
+    console.log('跳转指法页面成功')
+    this.props.router.push(`/notations/${notationid}`)
+    location.href = `/notations/${notationid}`
   }
 
   render () {
@@ -93,12 +124,32 @@ class Home extends React.Component {
         {text}
       </span>
     )
+    const bookid = 8
 
     return (
-      <div className='home'>
+      <div className='home' id='home-page'>
         <Header />
         <div className='banner'>
-          <div className='banner-background' />
+          <div className='banner-background'>
+            <div className='container flex'>
+              <div className='col-6 flex flex-column center-vertical mobile-text-center'>
+                <h1 className={this.state.addOpacity ? IndexCss.addOpacity : ''}>爱古琴, 爱生活</h1>
+                <h2 className={this.state.addOpacity ? IndexCss.addOpacity : ''}>iGuChin for a better life</h2>
+                <div className='mt40'>
+                  <a href='https://www.aiguqin.com' target='_blank' className='button'>
+                    <span>去应用商店下载 APP </span>
+                  </a>
+                </div>
+              </div>
+              <div className='col-6 flex flex-column center-vertical mobile-text-center'>
+                <div className='iphone launchaco-builder-hoverable'>
+                  <div className='mask mask__noimage'>
+                    <img alt='' className='mask-img' src='/src/assets/images/app.jpg' />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           {/* <div className="search-box" >
             <form>
               <input type="text" placeholder="搜索课程..." id="header-search"/>
@@ -119,7 +170,7 @@ class Home extends React.Component {
                         <label key={l}>{label}</label>
                       ))}
                     </p>
-                    <h3 className='title'>{society.name}</h3>
+                    <h3 className='title'><a href={`/books/${bookid}`}>碣石調幽蘭</a>{society.name}</h3>
                     <p className='address'>{society.address}</p>
                     <p className='stars'>
                       <Icon type='star' />
@@ -157,10 +208,37 @@ class Home extends React.Component {
             />
           </div> */}
           <div className='certs-books'>
-            <h3 className='certs-title'><span>历代琴谱</span></h3>
-            <Row gutter={16}>
+            <h3 className='certs-title'><span>历代琴谱</span><a href='/books' className='more-link'>查看更多</a></h3>
+            <Timeline>
+              <Timeline.Item dot={<div><span className='dnasty'>唐.大歷年間</span><span className='dnasty year'>(762-779)</span></div>}>
+                <span className='title'><a href={`/books/${bookid}`}>碣石調幽蘭</a></span><span className='author'>撰辑人: 丘明</span>
+              </Timeline.Item>
+              <Timeline.Item dot={<div><span className='dnasty'>宋.元豐七年</span><span className='dnasty year'>(1084)</span></div>}>
+                <span className='title'><a href={`/books/${bookid}`}>琴史</a></span><span className='author'>撰辑人: 朱長文</span>
+              </Timeline.Item>
+              <Timeline.Item dot={<div><span className='dnasty'>宋.嘉泰二年</span><span className='dnasty year'>(1202)</span></div>}>
+                <span className='title'><a href={`/books/${bookid}`}>白石道人歌曲</a></span><span className='author'>撰辑人: 姜夔</span>
+              </Timeline.Item>
+              <Timeline.Item dot={<div><span className='dnasty'>宋.年代不详</span><span className='dnasty year'>(不详)</span></div>}>
+                <span className='title'><a href={`/books/${bookid}`}>太古遗音</a></span><span className='author'>撰辑人: 田芝翁</span>
+              </Timeline.Item>
+              <Timeline.Item dot={<div><span className='dnasty'>元.泰定、至顺年间</span><span className='dnasty year'>(-)</span></div>}>
+                <span className='title'><a href={`/books/${bookid}`}>事林廣記</a></span><span className='author'>撰辑人: 陳元靚</span>
+              </Timeline.Item>
+              <Timeline.Item dot={<div><span className='dnasty'>明.永樂六年</span><span className='dnasty year'>(1408)</span></div>}>
+                <span className='title'><a href={`/books/${bookid}`}>永樂琴書集成</a></span><span className='author'>撰辑人: 明成祖敕撰</span>
+              </Timeline.Item>
+              <Timeline.Item dot={<div><span className='dnasty'>明.洪熙元年</span><span className='dnasty year'>(1425)</span></div>}>
+                <span className='title'><a href={`/books/${bookid}`}>神奇秘谱</a></span><span className='author'>撰辑人: 朱權(臞仙)</span>
+              </Timeline.Item>
+              <Timeline.Item dot={<div><span className='dnasty'>明.天顺元年</span><span className='dnasty year'>(1457)</span></div>}>
+                <span className='title'><a href={`/books/${bookid}`}>五聲琴谱</a></span><span className='author'>撰辑人: 懒仙</span>
+              </Timeline.Item>
+              <Timeline.Item dot={<div><span className='dnasty year'>( ... )</span></div>} />
+            </Timeline>
+            {/* <Row gutter={16}>
               <Col xs={{ span: 12 }} sm={{ span: 8 }} md={{ span: 6 }} className='cert'>
-                <div className='bookcover'>
+                <div className='bookcover' onClick={() => this.gotoBook(6)}>
                   <h2><span className='verticle'>碣石調幽蘭</span></h2>
                 </div>
               </Col>
@@ -199,13 +277,13 @@ class Home extends React.Component {
                   <h2><span className='verticle'>琴學管見</span></h2>
                 </div>
               </Col>
-            </Row>
+            </Row> */}
           </div>
           <div className='certs-notations'>
-            <h3 className='certs-title'><span>指法詞典</span></h3>
+            <h3 className='certs-title'><span>指法詞典</span><a href='/notations' className='more-link'>查看更多</a></h3>
             <Row gutter={16}>
               <Col xs={{ span: 12 }} sm={{ span: 8 }} md={{ span: 6 }} className='cert'>
-                <div className='notation'>
+                <div className='notation' onClick={() => this.gotoNotation(2)}>
                   <span className='glyph'>
                     <svg viewBox='0,0,400,400'><path d='M365.6,57.5l-9.7,9.7v114.5l-26.8,9.7v-26.8H131.8c-0.8,12.2-1.6,24.4-2.4,36.5c-4.1,30-12,57.5-24,82.4   c-16.8,35.2-40.5,63.7-71.1,85.7c20.3-21.9,36.7-45.9,49.1-71.9c16-33.6,24-68.1,24-103.5V30.7l31.7,17.1h187.6l14.6-14.6   L365.6,57.5z M329.1,157.4V55.1H131.8v102.3H329.1z' /></svg>
                   </span>
@@ -271,17 +349,16 @@ class Home extends React.Component {
                 </div>
               </Col>
             </Row>
-
           </div>
           <div className='certs-songs'>
-            <h3 className='certs-title'><span>琴曲大全</span></h3>
+            <h3 className='certs-title'><span>琴曲大全</span><a href='/songs' className='more-link'>查看更多</a></h3>
             <Row gutter={16}>
               <Col xs={{ span: 12 }} sm={{ span: 8 }} md={{ span: 6 }} className='cert'>
                 <div className='song'>
-                  <a href=''>
+                  <a href={`/books/${bookid}`}>
                     <Icon type='book' />
                   </a>
-                  <a href=''><span>廣陵散</span></a>
+                  <a href={`/books/${bookid}`}><span>廣陵散</span></a>
                 </div>
               </Col>
               <Col xs={{ span: 12 }} sm={{ span: 8 }} md={{ span: 6 }} className='cert'>
@@ -363,6 +440,14 @@ class Home extends React.Component {
 
     )
   }
+}
+
+Home.defaultProps = {
+  router: []
+}
+
+Home.propTypes = {
+  router: PropTypes.array
 }
 
 export default Home

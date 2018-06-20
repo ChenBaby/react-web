@@ -11,9 +11,16 @@ import Charity from './assets/components/Charity'
 import About from './assets/components/About'
 import Login from './assets/components/Login'
 import Library from './assets/components/Library'
+import Book from './assets/components/Book'
+import Books from './assets/components/Books'
+import Notation from './assets/components/Notation'
+import Notations from './assets/components/Notations'
+import Songs from './assets/components/Songs'
 
 
 import IndexCss from './assets/css/index.less'
+import './assets/css/header.less'
+import './assets/css/font.css'
 
 
 class App extends React.Component {
@@ -33,6 +40,11 @@ class App extends React.Component {
             <Route path='/library' component={Library} />
             <Route path='/login' component={Login} />
             <Route path='/charity' component={Charity} />
+            <Route path='/books/:id' component={Book} />
+            <Route path='/books' component={Books} />
+            <Route path='/notations' component={Notations} />
+            <Route path='/notations/:id' component={Notation} />
+            <Route path='/songs' component={Songs} />
           </Switch>
         </div>
         <BackTop className='top-button' />

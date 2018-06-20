@@ -1,7 +1,7 @@
 import React from 'react'
 import { Avatar } from 'antd'
 import '../css/charity.less'
-import Image from '../images/charitybg.jpg'
+// import Image from '../images/charitybg.jpg'
 
 function Charity () {
   const datasource = [
@@ -39,7 +39,7 @@ function Charity () {
   ]
   return (
     <div className='charity-content'>
-      <div><img src={Image} alt='' /></div>
+      {/* <div><img src={Image} alt='' /></div> */}
       <div className='details'>
         <h2>爱古琴公益榜明细</h2>
         <table>
