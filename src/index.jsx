@@ -13,8 +13,8 @@ import Login from './assets/components/Login'
 import Library from './assets/components/Library'
 import Book from './assets/components/Book'
 import Books from './assets/components/Books'
-import Notation from './assets/components/Notation'
 import Notations from './assets/components/Notations'
+import Notation from './assets/components/Notation'
 import Songs from './assets/components/Songs'
 
 
@@ -42,8 +42,8 @@ class App extends React.Component {
             <Route path='/charity' component={Charity} />
             <Route path='/books/:id' component={Book} />
             <Route path='/books' component={Books} />
-            <Route path='/notations' component={Notations} />
             <Route path='/notations/:id' component={Notation} />
+            <Route path='/notations' component={Notations} />
             <Route path='/songs' component={Songs} />
           </Switch>
         </div>
