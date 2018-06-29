@@ -1,3 +1,7 @@
+.icon {
+  font-family: "iconfont" !important;
+  font-style: normal;
+}
 .content .home-content {
   .search-box {
     margin-bottom: 280px;
@@ -27,18 +31,6 @@
   margin: 0 auto;
 }
 
-.title {
-  a {
-    font-size: 18px;
-    color: #02828b;
-  }
-}
-.author {
-  position: relative;
-  top: 15px;
-  font-size: 12px;
-}
-
 section {
   h2.section-heading {
     font-size: 40px;
@@ -50,6 +42,7 @@ section {
     font-weight: 400;
     margin-bottom: 75px;
     text-transform: none;
+    color: #6c757d;
   }
   .ant-stack-2x {
     font-size: 2em;
@@ -69,16 +62,9 @@ section {
   .ant-4x {
     font-size: 4em;
   }
-  .ant {
-    display: inline-block;
-    font-size: inherit;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-  }
-  .ant-circle:before {
-    font-family: "anticon" !important;
-    content: "\f111";
-    box-sizing: border-box;
+  p {
+    color: #6c757d!important;
+    line-height: 1.75;
   }
 }
 #library-sec {
@@ -95,8 +81,37 @@ section {
     font-weight: 700;
     font-size: 1.5rem;
   }
+  .glyph svg {
+    fill: #02828b;
+    position: relative;
+    left: 0px;
+    top: -15px;
+  }
+  .sec {
+    padding: 0 15px;
+  }
+  .icon-book {
+    position: relative;
+    left: -20px;
+  }
 }
 .learn-sec {
+  .musicians-member {
+    margin-bottom: 50px;
+    img {
+      width: 225px;
+      height: 225px;
+      border: 7px solid #fff;
+      border-radius: 50%!important;
+    }
+    h4 {
+      margin-top: 25px;
+      margin-bottom: 0;
+      text-transform: none;
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
+  }
   &.bg-light {
     background-color: #f8f9fa!important;
     padding: 150px 0;
@@ -105,50 +120,6 @@ section {
     width: 100%;
     max-width: 1000px;
     margin: 0 auto;
-  }
-  .portfolio-item {
-    margin: 0 0 30px;
-    padding-right: 15px;
-    padding-left: 15px;
-    .portfolio-link {
-      position: relative;
-      display: block;
-      max-width: 400px;
-      margin: 0 auto;
-      cursor: pointer;
-    }
-    .portfolio-hover {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      -webkit-transition: all ease .5s;
-      -moz-transition: all ease .5s;
-      transition: all ease .5s;
-      opacity: 0;
-      background: rgba(254,209,54,.9);
-    }
-    .img-fluid {
-      max-width: 100%;
-      height: auto;
-    }
-    .portfolio-caption {
-      max-width: 400px;
-      margin: 0 auto;
-      padding: 25px;
-      text-align: center;
-      background-color: #fff;
-      h4 {
-        margin: 0;
-        text-transform: none;
-        font-weight: 700;
-        font-size: 1.5rem;
-      }
-      p {
-        font-size: 16px;
-        margin: 0;
-        color: #6c757d!important;
-      }
-    }
   }
 }
 .publications-music {
@@ -172,6 +143,14 @@ section {
     content: '';
     background-color: #e9ecef;
   }
+  .publications-panel {
+    text-align: right;
+    padding-right: 40px;
+  }
+  .music-panel {
+    text-align: left;
+    padding-left: 40px;
+  }
 }
 
 .societies-sec {
@@ -179,9 +158,61 @@ section {
     background-color: #f8f9fa!important;
     padding: 150px 0;
   }
+  .societies-container {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+  .society {
+    margin: 0 0 30px;
+    padding: 0 15px;
+  }
+  .society-img {
+    position: relative;
+    display: block;
+    max-width: 400px;
+    margin: 0 auto;
+    label {
+      position: absolute;
+      left: 5px;
+      top: 5px;
+      display: inline-block;
+      background-color: rgba(2, 130, 139,0.75);
+      color: #fff;
+      padding: 3px 5px;
+      border-radius: 2px;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  .society-info {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 25px;
+    text-align: center;
+    background-color: #fff;
+    text-align: justify;
+    height: 150px;
+  }
 }
 
-@media screen and (max-width: 820px) {
+.share-img {
+  margin-bottom: 100px;
+  margin-top: 25px;
+}
+
+.share-info {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: justify;
+  p {
+    line-height: 2.75;
+  }
+}
+@media screen and (max-width: 992px) {
   #home-page {
     .banner {
       height: 1100px;
@@ -222,15 +253,55 @@ section {
         left: calc(50% - 20px);
       }
     }
-    .title {
-      font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  section h2.section-heading {
+    font-size: 30px;
+  }
+  #home-page .ant-col-8 {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 80px;
+  }
+  #library-sec h2.section-heading {
+    font-size: 24px;
+  }
+  .learn-sec h2.section-heading {
+    font-size: 28px;
+  }
+  .publications-music .ant-col-12 {
+    width: 100%;
+    margin-bottom: 100px;
+    padding: 0 10px;
+    .heading {
+      text-align: center;
     }
-    .author {
-      top: 10px;
+    .publications-body, .music-body {
+      text-align: justify;
     }
-    .ant-timeline-item-content {
-      width: 100%;
-      padding-left: 70px;
-    }
+  }
+  .publications-music .line:before {
+    background: none;
+  }
+  .publications-music .panel h3 {
+    font-size: 26px;
+  }
+  .publications-music .panel .subheading {
+    font-size: 1rem;
+  }
+  .societies-sec .society-info {
+    height: 200px;
+    max-width: 350px;
+  }
+  .share-info {
+    padding: 0 10px;
+  }
+}
+
+@media (min-width: 375px) and (max-width: 768px) {
+  .societies-sec .society-img label {
+    left: 25px;
   }
 }

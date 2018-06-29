@@ -1,9 +1,8 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import { Icon, Row, Col, List, Avatar, Timeline, Input, Radio } from 'antd'
+import { Row, Col, Input, Radio } from 'antd'
 import Header from './Header'
 import IndexCss from '../css/index.less'
-import HomeCss from '../css/home.less'
+import '../css/home.less'
 
 const Search = Input.Search
 const RadioGroup = Radio.Group
@@ -12,10 +11,10 @@ class Home extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      value: 1
+      // value: 1
     }
     this.handleScroll = this.handleScroll.bind(this)
-    this.onChange = this.onChange.bind(this)
+    // this.onChange = this.onChange.bind(this)
   }
 
   componentDidMount () {
@@ -37,108 +36,17 @@ class Home extends React.Component {
     }
   }
 
-  gotoBook (bookid) {
-    console.log('跳转琴谱页面成功')
-    this.props.router.push(`/books/${bookid}`)
-    location.href = `/books/${bookid}`
-  }
-
-  gotoNotation (notationid) {
-    console.log('跳转指法页面成功')
-    this.props.router.push(`/notations/${notationid}`)
-    location.href = `/notations/${notationid}`
-  }
-
-  onChange (e) {
-    console.log('radio checked', e.target.value)
-    this.setState({
-      value: e.target.value,
-    })
-  }
+  // onChange (e) {
+  //   console.log('radio checked', e.target.value)
+  //   this.setState({
+  //     value: e.target.value,
+  //   })
+  // }
 
   render () {
-    // 全球琴社页面的测试数据
-    const societiesList = [
-      {
-        name: '乔珊古琴艺术中心',
-        address: '上海市静安区成都北路777号静安雕塑公园3号门梅园',
-        labels: ['名家', '直营社', '未认证'],
-        score: 520,
-      }, {
-        name: '绿绮琴院',
-        address: '东莞市万江区下坝坊52号',
-        labels: ['斫琴师', '未认证'],
-        score: 480,
-      }, {
-        name: '天虹琴馆',
-        address: '广州市越秀区大德路202号2004房',
-        labels: ['名家', '直营社', '未认证'],
-        score: 400,
-      }, {
-        name: '钧天琴院',
-        address: '北京市大兴区魏善庄镇前苑上村西刘路钧天坊古琴文化艺术传播有限公司',
-        labels: ['名家', '直营社', '未认证'],
-        score: 400,
-      }, {
-        name: '春风琴社',
-        address: '深圳市南山区科苑南路海阔天空雅居24',
-        labels: ['名家', '直营社', '未认证'],
-        score: 300,
-      }, {
-        name: '绿绮室·宋大年古琴工作室',
-        address: '郑州市郑东新区九如路与商务内环交叉口天下收藏北区三楼3078号',
-        labels: ['名家', '未认证'],
-        score: 300,
-      },
-    ]
-
-    // 热门分享的测试数据
-    const shareList = [
-      {
-        href: 'http://ant.design',
-        title: '古琴的结构',
-        avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
-        image: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1514514903,2095539617&fm=27&gp=0.jpg',
-        description: '引自宋代 田紫芝 《太古遗音》',
-        content: '《琴体说》 琴之首曰凤额，下曰凤舌。其次曰承露，乃临岳之前也，俗谓之岳裙。轸穴俗谓之轸眼。岳之为体，巍然而高，如山岳之状。凤嗉，琴项也。谓之喉舌。可以教令也。仙人肩者，取其若肩背之正也。龙腰者，取其曲折如龙也；又曰玉女腰，取其纤也。自肩至腰。总象凤翅耸然而张。龙唇龙龈，乃琴末承弦之异名。焦尾人谓之冠，取其状名也。',
-        label: '文章',
-      },
-      {
-        href: 'http://ant.design',
-        title: '乾隆与琴 | 微杂志 · 第5期',
-        avatar: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=709031208,3322676689&fm=27&gp=0.jpg',
-        image: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=517701222,475752096&fm=27&gp=0.jpg',
-        description: '今藏北京故宫博物院的《弘历观画图》是由擅长写实画的郎世宁绘制的一幅“画中画”。画中乾隆皇帝弘历在清风中欣赏着《洗象图》。',
-        content: '乾隆早年御制诗集中的《四琴诗》，即为乾隆帝为其珍藏的四种老桐木琴——“瀛蓬仙籁”、“湘江秋碧”、“皋禽霜唳”、“云海移情”分别赐名并赋诗合并而成。乾隆还曾多次诏唐侃为其演奏琴曲，先后欣赏了《猗兰操》、《高山》、《流水》、《秋鸿》等曲。除此以外，民间还流传着很多乾隆与琴的故事，这些文化遗存让我们认识了一个“喜琴”的皇帝，“好琴”的乾隆。',
-        label: '文章',
-      },
-      {
-        href: 'http://ant.design',
-        title: '分享一首《高山流水》',
-        avatar: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=541435924,1167307690&fm=27&gp=0.jpg',
-        image: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3388399720,526774666&fm=27&gp=0.jpg',
-        description: '乔珊先生演奏',
-        content: '是曲，伯牙所作，言其志在高山，仁者之樂也，言其志在流水，智者之樂也。高山流水本只是一曲，至唐，分為兩曲，不分段數。至宋，分高山爲四段，流水為八段。按琴史，列子云，伯牙善鼓，鍾子期善聽。伯牙志在高山，鍾子曰，巍巍乎，若泰山之聳。伯牙志在流水，子期聽曰，洋洋乎，若江海波潮。伯牙曰，善哉，子期之心與吾心同。子期既沒，伯牙遂絕絃，終身不復再鼓也。高山流水之曲乃傳至于今。',
-        label: '音乐',
-      },
-      {
-        href: 'http://ant.design',
-        title: '我今天练琴排名第一位，你呢？',
-        avatar: 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2825425622,3006033936&fm=27&gp=0.jpg',
-        image: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2588153910,3448064580&fm=27&gp=0.jpg',
-        description: '爱古琴习琴排行榜第一名',
-        content: '爱古琴习琴聚集了四面八方的琴友们，快来加入我们一起习琴吧，分享你的琴声，你的成长记录，下载APP还有调音器、节拍器等小工具',
-        label: '练琴',
-      },
-    ]
-    const IconText = ({ type, text }) => (
-      <span>
-        <Icon type={type} style={{ marginRight: 8 }} />
-        {text}
-      </span>
-    )
-    const bookid = 8
-
+    const style1 = {
+      textIndent: '2em'
+    }
     return (
       <div className='home' id='home-page'>
         <Header />
@@ -149,7 +57,7 @@ class Home extends React.Component {
                 <h1 className={this.state.addOpacity ? IndexCss.addOpacity : ''}>爱古琴, 爱生活</h1>
                 <h2 className={this.state.addOpacity ? IndexCss.addOpacity : ''}>iGuChin for a better life</h2>
                 <div className='mt40'>
-                  <a href='https://www.aiguqin.com' target='_blank' className='button'>
+                  <a href='javascript:void(0)' className='button'>
                     <span>去应用商店下载 APP </span>
                   </a>
                 </div>
@@ -165,7 +73,7 @@ class Home extends React.Component {
           </div>
         </div>
         <div className='home-content text-center'>
-          <section className='search-sec'>
+          {/* <section className='search-sec'>
             <div className='search-box' >
               <div className='text-center'>
                 <Search
@@ -177,13 +85,13 @@ class Home extends React.Component {
               <div className='radios-container'>
                 <RadioGroup onChange={this.onChange} value={this.state.value}>
                   <Radio value={1}>全部</Radio>
-                  <Radio value={2}>琴谱</Radio>
+                  <Radio value={2}>谱书</Radio>
                   <Radio value={3}>指法</Radio>
                   <Radio value={4}>琴曲</Radio>
                 </RadioGroup>
               </div>
             </div>
-          </section>
+          </section> */}
           <section id='library-sec'>
             <div className='container'>
               <Row>
@@ -193,26 +101,33 @@ class Home extends React.Component {
                 </Col>
               </Row>
               <Row>
-                <Col span={8} className='text-center'>
+                <Col span={8} className='text-center sec'>
                   <span className='ant-stack ant-4x'>
-                    <Icon type='book' className='ant-stack-2x text-secondary' />
+                    <i className='icon icon-book ant-stack-2x text-secondary' />
                   </span>
-                  <h4 className='service-heading'>琴谱</h4>
-                  <p className='text-muted'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                  <h4 className='service-heading'>谱书</h4>
+                  <p>156部历代传世谱书</p>
+                  <p>整理历史刊行的谱书，高清处理图像，考证版本年代，以及编辑目录分类等</p>
                 </Col>
-                <Col span={8} className='text-center'>
-                  <span className='ant-stack ant-4x'>
-                    <Icon type='star' className='ant-stack-2x text-secondary' />
-                  </span>
+                <Col span={8} className='text-center sec'>
+                  <div className='notation ant-stack ant-4x'>
+                    <span className='glyph'>
+                      <svg viewBox='0,0,400,400' width='130' height='130'>
+                        <path d='M200,39.2c-6.2,4.3-11.2,8.1-15,11.4c-11.4,9.7-20.2,19.8-26.4,30c-6,6.8-11.9,13.4-17.9,19.9   c-15.2,15.7-31.9,29.9-50.3,42.6c-25.7,18.1-51.7,31.4-78,39.8c1.6,0,10.8-5.4,27.6-16.2c22.2-14.3,42.6-30.6,61.3-48.7   c26.5-25.4,47.2-52.5,62.1-81.2H51.4l-4.9,2.4l-7.3-9.7H161l14.6-14.6L200,39.2z M95.3,112.3c-3.2-8.4-6.1-15.3-8.5-20.7   c-7.3-16.2-15-30.5-23.1-42.6c10.8,4.3,20.7,10.1,29.6,17.5c11.4,9.5,17.1,18.1,17.1,26C110.3,100,105.3,106.6,95.3,112.3z    M387.6,141.5c-3,0.8-5.4,1.5-7.3,2c-11.6,4.6-20.6,11.2-26.8,19.9c-29.2-15.2-50.3-27.1-63.3-35.7c-21.9-14.6-39.2-30.2-52-46.7   c-15.2-19.8-25.4-42.6-30.9-68.6h4.9c1.4,4.3,2.6,8,3.7,11c6.5,17.3,14.2,32.3,23.1,45.1c8.1-6.2,14.7-11.6,19.9-16.2   c15.4-13.8,28.3-27.9,38.6-42.2l24.4,21.9c-15.4,1.9-29.9,7.6-43.4,17.1c-11.6,8.1-23.1,16.2-34.5,24.4c1.9,2.4,3.7,4.5,5.3,6.1   c9.5,9.7,21.5,18.3,36.1,25.6c7.3-6.2,13.3-11.5,17.9-15.8C318,75.6,330.7,63,341.3,51.4l21.9,21.9c-11.1,3.2-19.9,6.1-26.4,8.5   c-19.5,7.6-35.1,16.1-46.7,25.6c10.8,5.1,20,9.2,27.6,12.2C342.1,129.4,365.4,136.7,387.6,141.5z' /><path d='M207.3,269.8v106.7l-21.9,9.7V269.8H95.3v18.7l-24.4,9.7V192.8l29.2,17.1h85.3v-37H86.2l-4.9,2.4l-7.3-9.7h111.4v-45.7   l36.5,17.1l-14.6,9.7v18.9h65.1l24.4-24.4l31.7,31.7H207.3v37h90.1l14.6-14.6l19.5,19.5l-9.7,9.7v51.9l-21.9,9.7v-16.3H207.3z    M185.4,262.5v-45.4H95.3v45.4H185.4z M299.9,262.5v-45.4h-92.6v45.4H299.9z' />
+                      </svg>
+                    </span>
+                  </div>
                   <h4 className='service-heading'>指法</h4>
-                  <p className='text-muted'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                  <p>1600多个原样采集的譜字释义</p>
+                  <p>人工勾线条，技术显示处理，保证媒体设备解析度上的锐利，罗列出处、原文释义等资料</p>
                 </Col>
-                <Col span={8} className='text-center'>
+                <Col span={8} className='text-center sec'>
                   <span className='ant-stack ant-4x'>
-                    <Icon type='flag' className='ant-stack-2x text-secondary' />
+                    <i className='icon icon-file ant-stack-2x text-secondary' />
                   </span>
                   <h4 className='service-heading'>琴曲</h4>
-                  <p className='text-muted'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                  <p>共收录832首琴歌</p>
+                  <p>收集附在曲谱内的释义，多轮校勘，将每首曲目按照不同的年代和谱书记载分类处理</p>
                 </Col>
               </Row>
             </div>
@@ -226,60 +141,28 @@ class Home extends React.Component {
                 </Col>
               </Row>
               <Row>
-                <Col span={8} className='text-center portfolio-item'>
-                  <a className='portfolio-link' data-toggle='modal' href='#portfolioModal1'>
-                    <div className='portfolio-hover'>
-                      <div className='portfolio-hover-content'>
-                        <i className='fa fa-plus fa-3x' />
-                      </div>
-                    </div>
-                    <img className='img-fluid' src='/src/assets/images/artist3.jpg' alt='' />
-                  </a>
-                  <div className='portfolio-caption'>
+                <Col span={8} className='text-center'>
+                  <div className='musicians-member'>
+                    <img src='/src/assets/images/artist3.jpg' alt='' />
                     <h4>乔珊</h4>
-                    <p className='text-muted'>国际古琴学会会长</p>
+                    <p>国际古琴学会会长</p>
+                    <p>古琴演奏家、琴歌演唱家</p>
                   </div>
                 </Col>
-                <Col span={8} className='text-center portfolio-item'>
-                  <a className='portfolio-link' data-toggle='modal' href='#portfolioModal1'>
-                    <div className='portfolio-hover'>
-                      <div className='portfolio-hover-content'>
-                        <i className='fa fa-plus fa-3x' />
-                      </div>
-                    </div>
-                    <img className='img-fluid' src='/src/assets/images/artist1.jpg' alt='' />
-                  </a>
-                  <div className='portfolio-caption'>
-                    <h4>戴茹</h4>
-                    <p className='text-muted'>成都古琴文化学会会长</p>
+                <Col span={8} className='text-center'>
+                  <div className='musicians-member'>
+                    <img src='/src/assets/images/artist5.jpg' alt='' />
+                    <h4>陈成渤</h4>
+                    <p>中国传统文化促进会</p>
+                    <p>古琴文化委员会副主任</p>
                   </div>
                 </Col>
-                <Col span={8} className='text-center portfolio-item'>
-                  <a className='portfolio-link' data-toggle='modal' href='#portfolioModal1'>
-                    <div className='portfolio-hover'>
-                      <div className='portfolio-hover-content'>
-                        <i className='fa fa-plus fa-3x' />
-                      </div>
-                    </div>
-                    <img className='img-fluid' src='/src/assets/images/artist2.jpg' alt='' />
-                  </a>
-                  <div className='portfolio-caption'>
+                <Col span={8} className='text-center'>
+                  <div className='musicians-member'>
+                    <img src='/src/assets/images/artist2.jpg' alt='' />
                     <h4>谢东笑</h4>
-                    <p className='text-muted'>广东古琴研究会会长</p>
-                  </div>
-                </Col>
-                <Col span={8} className='text-center portfolio-item'>
-                  <a className='portfolio-link' data-toggle='modal' href='#portfolioModal1'>
-                    <div className='portfolio-hover'>
-                      <div className='portfolio-hover-content'>
-                        <i className='fa fa-plus fa-3x' />
-                      </div>
-                    </div>
-                    <img className='img-fluid' src='/src/assets/images/artist4.jpg' alt='' />
-                  </a>
-                  <div className='portfolio-caption'>
-                    <h4>赵晓霞</h4>
-                    <p className='text-muted'>中国古琴学会理事</p>
+                    <p>广东古琴研究会会长</p>
+                    <p>岭南派广东省级代表性传承人</p>
                   </div>
                 </Col>
               </Row>
@@ -289,11 +172,12 @@ class Home extends React.Component {
             <Row>
               <Col span={12} className='publications-panel panel'>
                 <div className='heading'>
-                  <h3>出版物历代古琴文献汇编</h3>
-                  <h4 className='subheading'>Our Humble Beginnings</h4>
+                  <h3>历代古琴文献汇编</h3>
+                  <h4 className='subheading'>图书出版物</h4>
                 </div>
                 <div className='publications-body'>
-                  <p className='text-muted'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                  <p style={style1}>历代古琴文献汇编为一套书共计8本：琴曲释意卷、斫琴卷、抚琴要则卷、音律卷、指法释义卷、古琴谱书卷、古琴圣贤卷、古琴款式卷</p>
+                  <p>（琴曲释义卷）共计整理了156部古琴谱中的内容，共计包含900首古琴曲在每部琴谱中的曲意、歌词、解题、段标题、后记内容</p>
                 </div>
               </Col>
               <Col>
@@ -302,22 +186,71 @@ class Home extends React.Component {
               <Col span={12} className='music-panel panel'>
                 <div className='heading'>
                   <h3>优质古琴音乐资源</h3>
-                  <h4 className='subheading'>Our Humble Beginnings</h4>
+                  <h4 className='subheading'>随时随地分享古琴音乐</h4>
                 </div>
                 <div className='music-body'>
-                  <p className='text-muted'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                  <p>权威、专业、全面、高品质的古琴音乐</p>
+                  <p>收录了三千多首的古琴曲，按照名家以及古琴曲进行归类，同一名家不同琴曲不同年代不同版本、同一琴曲不同演奏家不同年代不同版本，便捷的检索，随时随地的欣赏古琴这一独特的音乐艺术</p>
                 </div>
               </Col>
             </Row>
           </section>
           <section className='bg-light societies-sec'>
-            <div>
+            <div className='societies-container'>
               <Row>
                 <Col span={24} className='text-center'>
                   <h2 className='section-heading'>全球优质琴社推荐</h2>
                   <h3 className='section-subheading'>汇集了全球古琴馆资源</h3>
                 </Col>
               </Row>
+              <Row>
+                <Col span={8} className='society'>
+                  <div className='society-img'>
+                    <label>吴门琴社</label>
+                    <img src='/src/assets/images/society1.jpg' alt='' />
+                  </div>
+                  <div className='society-info'>
+                    <h4>社长：吴明涛</h4>
+                    <p>一九八六年秋吴兆基先生与吴地琴人徐忠伟先生、叶名佩女士和吴先生弟子裴金宝先生四人发起筹建，结社吴门</p>
+                  </div>
+                </Col>
+                <Col span={8} className='society'>
+                  <div className='society-img'>
+                    <label>修竹琴舍</label>
+                    <img src='/src/assets/images/society2.jpg' alt='' />
+                  </div>
+                  <div className='society-info'>
+                    <h4>社长：谢东笑</h4>
+                    <p>修竹琴舍，是个安静习琴、听琴的地方，秉持“琴以修身”的理念传承琴学</p>
+                  </div>
+                </Col>
+                <Col span={8} className='society'>
+                  <div className='society-img'>
+                    <label>德音琴社</label>
+                    <img src='/src/assets/images/society3.jpg' alt='' />
+                  </div>
+                  <div className='society-info'>
+                    <h4>社长：王笑天</h4>
+                    <p>又名“音乐传习社”，是20世纪国内第一个古琴组织。1910年由山东诸城派琴家王心葵发起于济南大明湖畔</p>
+                  </div>
+                </Col>
+              </Row>
+            </div>
+          </section>
+          <section>
+            <Row>
+              <Col span={24} className='text-center'>
+                <h2 className='section-heading'>公益慈善</h2>
+                <h3 className='section-subheading'>为捐助而分享</h3>
+              </Col>
+              <Col span={24} className='text-center share-img'>
+                <img src='/src/assets/images/love.jpg' alt='' />
+              </Col>
+            </Row>
+            <div className='share-info'>
+              <p>随心分享随手捐，力行做公益，传递爱心。多一份爱心，多一份希望。</p>
+              <p>公益慈善活动旨在帮助琴友们以及身边有需要帮助的人士，慈善资金是由用户向身边的琴友推荐分享爱古琴获得的鼓励琴贝等组成，用户自主选择参加捐助计划，把鼓励金捐助给有需要的人。</p>
+              <p>当您在现实生活中遇到重大困难的时候，联系我们，爱古琴将通过“捐助计划”给予您最大限度内的帮助。</p>
             </div>
           </section>
         </div>
@@ -325,14 +258,6 @@ class Home extends React.Component {
 
     )
   }
-}
-
-Home.defaultProps = {
-  router: []
-}
-
-Home.propTypes = {
-  router: PropTypes.array
 }
 
 export default Home
