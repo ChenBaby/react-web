@@ -1,14 +1,13 @@
 const path = require('path')
 const webpack = require('webpack')
-
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
   entry: [
     path.resolve(__dirname, './src/index.jsx'),
   ],
   output: {
-    path: path.resolve(__dirname, 'build'),
-    filename: 'bundle.js',
-    publicPath: '/build/'
+    path: path.resolve(__dirname, './build'),
+    filename: 'bundle.js'
   },
   devtool: 'source-map',
   resolve: {
@@ -64,11 +63,26 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
+    new HtmlWebpackPlugin({
+        template: 'index.html',
+        inject: true,
+        // favicon: resolve('favicon.ico'),
+        minify: {
+            removeComments: true,
+            collapseWhitespace: true,
+            removeAttributeQuotes: true
+            // more options:
+            // https://github.com/kangax/html-minifier#options-quick-reference
+        },
+        // necessary to consistently work with multiple chunks via CommonsChunkPlugin
+        chunksSortMode: 'dependency'
+    }),
   ],
   devServer: {
     port: 3000,
     stats: 'errors-only', // 命令行只打印错误的显示
     inline: true, // 自动刷新页面
+    contentBase: "./build",
     historyApiFallback: { // 解决BrowserRouter刷新问题
       index: './',
     },

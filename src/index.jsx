@@ -42,8 +42,8 @@ class App extends React.Component {
             <Route path='/charity' component={Charity} />
             <Route path='/books/:id' component={Book} />
             <Route path='/books' component={Books} />
-            <Route path='/notations' component={Notations} />
             <Route path='/notations/:id' component={Notation} />
+            <Route path='/notations' component={Notations} />
             <Route path='/songs' component={Songs} />
           </Switch>
         </div>
