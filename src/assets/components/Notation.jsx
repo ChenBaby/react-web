@@ -9,7 +9,6 @@ class Notation extends React.Component {
     this.state = {
       notationid: props.match.params.id
     }
-    this.remarkClick = this.remarkClick.bind(this)
     console.log(this.state.notationid)
   }
 

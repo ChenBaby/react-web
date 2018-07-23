@@ -7,14 +7,12 @@ import classnames from 'classnames'
 import Home from './assets/components/Home'
 // import Header from './assets/components/Header'
 import Footer from './assets/components/Footer'
-import Charity from './assets/components/Charity'
 import About from './assets/components/About'
 import Login from './assets/components/Login'
-import Library from './assets/components/Library'
 import Book from './assets/components/Book'
 import Books from './assets/components/Books'
-import Notation from './assets/components/Notation'
 import Notations from './assets/components/Notations'
+import Notation from './assets/components/Notation'
 import Songs from './assets/components/Songs'
 
 
@@ -37,9 +35,7 @@ class App extends React.Component {
           <Switch>
             <Route exact path='/' component={Home} />
             <Route path='/about' component={About} />
-            <Route path='/library' component={Library} />
             <Route path='/login' component={Login} />
-            <Route path='/charity' component={Charity} />
             <Route path='/books/:id' component={Book} />
             <Route path='/books' component={Books} />
             <Route path='/notations/:id' component={Notation} />
