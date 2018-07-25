@@ -58,7 +58,7 @@ module.exports = {
       loader: 'style-loader!css-loader?importLoaders=1',
     }, {
       test: /\.png|.jpg$/,
-      loader: 'url-loader?limit=8192',
+      loader: 'url-loader?limit=81920',
     }],
   },
   plugins: [
@@ -82,9 +82,7 @@ module.exports = {
     port: 3000,
     stats: 'errors-only', // 命令行只打印错误的显示
     inline: true, // 自动刷新页面
-    contentBase: "./build",
-    historyApiFallback: { // 解决BrowserRouter刷新问题
-      index: './',
-    },
+    contentBase: "./static",
+    historyApiFallback: true,
   }
 }
